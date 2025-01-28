@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: OpenGLTest
-# Configurations: 
+# Configurations: Debug
 # =============================================================================
 
 #############################################
@@ -20,6 +20,11 @@
 
 ninja_required_version = 1.5
 
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -44,14 +49,16 @@ cmake_ninja_workdir = /home/jbutragu/openGL/build/
 
 build cmake_object_order_depends_target_OpenGLTest: phony || CMakeFiles/OpenGLTest.dir
 
-build CMakeFiles/OpenGLTest.dir/test/test.cpp.o: CXX_COMPILER__OpenGLTest_ /home/jbutragu/openGL/test/test.cpp || cmake_object_order_depends_target_OpenGLTest
+build CMakeFiles/OpenGLTest.dir/test/test.cpp.o: CXX_COMPILER__OpenGLTest_Debug /home/jbutragu/openGL/test/test.cpp || cmake_object_order_depends_target_OpenGLTest
   DEP_FILE = CMakeFiles/OpenGLTest.dir/test/test.cpp.o.d
+  FLAGS = -g -O0 -g
   INCLUDES = -I/home/jbutragu/openGL/include
   OBJECT_DIR = CMakeFiles/OpenGLTest.dir
   OBJECT_FILE_DIR = CMakeFiles/OpenGLTest.dir/test
 
-build CMakeFiles/OpenGLTest.dir/src/glad.c.o: C_COMPILER__OpenGLTest_ /home/jbutragu/openGL/src/glad.c || cmake_object_order_depends_target_OpenGLTest
+build CMakeFiles/OpenGLTest.dir/src/glad.c.o: C_COMPILER__OpenGLTest_Debug /home/jbutragu/openGL/src/glad.c || cmake_object_order_depends_target_OpenGLTest
   DEP_FILE = CMakeFiles/OpenGLTest.dir/src/glad.c.o.d
+  FLAGS = -g
   INCLUDES = -I/home/jbutragu/openGL/include
   OBJECT_DIR = CMakeFiles/OpenGLTest.dir
   OBJECT_FILE_DIR = CMakeFiles/OpenGLTest.dir/src
@@ -64,7 +71,8 @@ build CMakeFiles/OpenGLTest.dir/src/glad.c.o: C_COMPILER__OpenGLTest_ /home/jbut
 #############################################
 # Link the executable OpenGLTest
 
-build OpenGLTest: CXX_EXECUTABLE_LINKER__OpenGLTest_ CMakeFiles/OpenGLTest.dir/test/test.cpp.o CMakeFiles/OpenGLTest.dir/src/glad.c.o | /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+build OpenGLTest: CXX_EXECUTABLE_LINKER__OpenGLTest_Debug CMakeFiles/OpenGLTest.dir/test/test.cpp.o CMakeFiles/OpenGLTest.dir/src/glad.c.o | /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
+  FLAGS = -g -O0 -g
   LINK_LIBRARIES = -lOpenGL  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
   OBJECT_DIR = CMakeFiles/OpenGLTest.dir
   POST_BUILD = :

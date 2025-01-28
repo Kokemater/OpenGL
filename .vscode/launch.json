@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug OpenGLTest",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/OpenGLTest",  // Path to your compiled binary
+            "args": [],
+            "stopAtEntry": false,  // Set to true if you want to stop at the entry point (main)
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true, // Optional: if you want the program to open in a separate console
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for GDB",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb",  // Path to gdb (may vary depending on your system)
+            "preLaunchTask": "build",  // Optional: Specify a pre-launch task, like compiling the project
+            "miDebuggerArgs": "",
+            "logging": {
+                "moduleLoad": false,
+                "trace": false,
+                "engineLogging": false
+            },
+            "sourceFileMap": {
+                "/build/src": "${workspaceFolder}/src"
+            }
+        }
+    ]
+}
